@@ -1,7 +1,7 @@
 package org.calm.October;
 /**
  * ------------------------
- *
+ * 779. medium
  * ------------------------
  * @author liyang
  * @date 2022/10/20
@@ -9,27 +9,10 @@ package org.calm.October;
  * ------------------------
  */
 public class Day1020 {
-    String str = "0";
-    public int kthGrammar(int n, int k) {
-
-        int a = 1;
-        while (a < n) {
-            recursive();
-            a++;
-        }
-        return Integer.parseInt(str.charAt(k - 1) + "");
-    }
-
-    void recursive() {
-        StringBuilder sb = new StringBuilder();
-        for (char c : str.toCharArray()) {
-            if (c == '0') {
-                sb.append("01");
-            } else {
-                sb.append("10");
-            }
-        }
-        str = sb.toString();
+    int kthGrammar(int n, int k) {
+        if (k == 1) return 0; // 向上遍历到了第1行，则返回结果
+        if (k > (1 << n - 2)) return 1 ^ kthGrammar(n - 1, k - (1 << n - 2)); // 如果在“蓝色区间”，则与上一行值相反
+        else return kthGrammar(n - 1, k); // 如果在“黄色区间”，则与上一行值相同
     }
 
 }
