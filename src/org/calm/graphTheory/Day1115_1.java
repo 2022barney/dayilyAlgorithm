@@ -17,6 +17,8 @@ import java.util.Queue;
 public class Day1115_1 {
     // 时间复杂度：O(n + m) n人数，m为数组大小
     // 空间复杂度同
+
+    // 染色
     public boolean possibleBipartition(int n, int[][] dislikes) {
         int[] color = new int[n + 1];
         List<Integer>[] g = new List[n + 1];
