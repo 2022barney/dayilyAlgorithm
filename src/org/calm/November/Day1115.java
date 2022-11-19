@@ -1,15 +1,11 @@
 package org.calm.November;
 
-import sun.security.action.GetBooleanAction;
 
-import java.security.AccessController;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * ------------------------
- *
+ * 1710.easy
  * ------------------------
  * @author liyang
  * @date 2022/11/15
@@ -18,12 +14,6 @@ import java.util.List;
  */
 public class Day1115 {
 
-    public static void main(String[] args) {
-        boolean b = AccessController.doPrivileged(
-                new GetBooleanAction(
-                        "java.util.Arrays.useLegacyMergeSort")).booleanValue();
-        System.out.println(b);
-    }
     public int maximumUnits(int[][] boxTypes, int truckSize) {
         int maxNum = 0;
         Arrays.sort(boxTypes, (a, b) -> b[1] - a[1]);
