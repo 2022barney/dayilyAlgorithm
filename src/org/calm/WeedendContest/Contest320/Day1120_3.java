@@ -15,11 +15,11 @@ import java.util.Queue;
  * ------------------------
  */
 public class Day1120_3 {
-    List<Integer>[] adj;
-    long ans = 0;
-    int s = 0;
-    public long minimumFuelCost(int[][] roads, int seats) {
 
+    long ans;
+    public long minimumFuelCost(int[][] roads, int seats) {
+        List<Integer>[] adj;
+        int s = 0;
         if (roads == null || roads.length == 0) return 0;
         int n = roads.length;
         adj = new List[n + 1];
@@ -32,18 +32,18 @@ public class Day1120_3 {
             adj[road[1]].add(road[0]);
         }
         for (int x : adj[0]) {
-            dfs(x, 0);
+            dfs(x, 0, adj, s);
         }
 
         return ans;
 
     }
 
-    int dfs(int x, int p) {
+    int dfs(int x, int p, List<Integer>[] adj, int s) {
         int size = 1;
         for (int y : adj[x]) {
             if (y != p) {
-                size += dfs(y, x);
+                size += dfs(y, x, adj, s);
             }
         }
         ans += (size + s - 1) / s;
