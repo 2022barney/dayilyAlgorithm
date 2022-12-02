@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 /**
  * ------------------------
- *
+ *1769。medium 模拟
  * ------------------------
  * @author liyang
  * @date 2022/12/2
