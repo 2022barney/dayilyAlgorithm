@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 /**
  * ------------------------
- * <p>
+ * 1697 hard  检查边长度限制的路径是否存在
  * ------------------------
  * @author liyang
+ * @date 2022/12/14
  * @version 1.0
  * ------------------------
- * @date 2022/12/14
  */
 public class Day1214 {
     public boolean[] distanceLimitedPathsExist(int n, int[][] edgeList, int[][] queries) {
